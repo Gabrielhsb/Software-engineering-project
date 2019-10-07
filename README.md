@@ -1,12 +1,12 @@
 # Corporação Kaiba 
 Sistema de gerenciamento de vendas de uma loja de cards (Yugioh, Magic, Pokemon).
 
-<h3>Grupo:<h3>
+<h3>Grupo:</h3>
 
--Gabriel Bernardo
--Lucas Floriano
+- Gabriel Bernardo
+- Lucas Floriano
 
-<h3> Tecnologias utilizadas: <h3>
+<h3> Tecnologias utilizadas: </h3>
 
 Ferramenta | Versão
 :-------: | :------:
