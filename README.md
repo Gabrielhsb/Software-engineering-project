@@ -4,7 +4,7 @@ Sistema de gerenciamento de vendas de uma loja de cards (monstros de duelos).
 
 <h3>Grupo:</h3>
 
-- Gabriel Silva Bernardo
+- Gabriel Henrique Silva Bernardo
 - Lucas Floriano Bernardes de Castro
 
 <h3> Tecnologias utilizadas: </h3>
