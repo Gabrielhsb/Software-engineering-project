@@ -27,22 +27,38 @@ mysqli_close($connect);
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
 
+      <body bgcolor="#afafaf">
 
+      <div class="nabar-fixed">
+<nav>
+<div class="nav-wrapper  indigo darken-3">
+<a href="../index.php" class="brand-logo center">Kaiba Corporation</a>
+<ul id="nav-mobile" class="right hide-on-med-and-down" >
+    <li><div class="divider"></div></li>
+  </ul>  
+  </li>
+</ul>
 
-    <div class="row">
-      <div class="col s12 m6 push-m3 ">
-      <div class="card blue-grey darken-1" class="z-depth-3">
-        <div class="card-content white-text row">
-        <a href="#user"><img style="max-width: 150px;"class="circle" src="includes/SK.jpg"></a>
-          <span class="card-title"><?php echo $dados['nome']; ?></span>
-          <p>Presidente da corporação Kaiba!</p>
-        </div>
-        <div class="card-action">
-          <a href="#">Editar perfil</a>
-          <a href="../index.php">Voltar</a>
-          <a href="logout.php">Sair</a>
+</nav>
+      </div>
+        <div class="row valing-wrapper " style="margin-top: 150px;">
+          <div class="col s12 m6 push-m3 center container">
+          <div class="card blue-grey darken-1 center" class="z-depth-3 " >
+            <div class="card-content white-text row " >
+            <a href="#user"><img style="max-width: 150px;"class="circle" src="includes/SK.jpg"></a>
+              <span class="card-title"><?php echo $dados['nome']; ?></span>
+              <p align='justify'>Kaiba é o maior acionista e Presidente de sua própria empresa multinacional, Corporação Kaiba. Arrogante e egocêntrico, Kaiba pretende tornar-se novamente o maior duelista do mundo; para isso, ele precisa derrotar Yugi Muto.
+                Uma das principais características de Kaiba é absolutamente desacreditar no coração das cartas e nos poderes místicos geralmente usados na série; ele se convence de que são apenas truques e ilusões. 
+                Ele também tem um certo desprezo pelos amigos de Yugi; refere-se a eles como dweeb patrol e geek squad.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">Editar perfil</a>
+              <a href="../index.php">Voltar</a>
+              <a href="logout.php">Sair</a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</html>
+    </body>
+  </html>
+
