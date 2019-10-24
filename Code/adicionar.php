@@ -1,6 +1,16 @@
 <?php
 include_once 'includes/header.php';
 ?>
+<nav>
+<div class="nav-wrapper  indigo darken-3">
+<a href="../index.php" class="brand-logo center">Kaiba Corporation</a>
+<ul id="nav-mobile" class="right hide-on-med-and-down" >
+    <li><div class="divider"></div></li>
+  </ul>  
+  </li>
+</ul>
+
+</nav>
 <div class="row">
   <div class="col s12 m6 push-m3 ">
   <h3 class="light">Novo Card</h3>
