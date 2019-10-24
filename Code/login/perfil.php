@@ -27,7 +27,7 @@ mysqli_close($connect);
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
 
-      <body bgcolor="#afafaf">
+      <body>
 
       <div class="nabar-fixed">
 <nav>
