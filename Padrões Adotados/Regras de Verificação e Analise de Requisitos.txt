@@ -1,6 +1,6 @@
 Regras que deveram ser seguidas no processo de especificação dos requisitos:
-  1-Requisitos não funcionais devem ser quantitativos;
-  2-Definir apenas uma função por requisito;
+  1-Requisitos não funcionais devem ser verificãveis quantitativamente;
+  2-Definir apenas uma funcionalidade por requisito;
   3-Evitar frases com mais de 100 caracteres;
   4-Evitar palavras que podem gerar ambiguidade,como por exemplo: "e", "ou", "até";
 
