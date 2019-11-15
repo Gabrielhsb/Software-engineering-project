@@ -39,6 +39,9 @@ include_once 'includes/msg.php';
       <?php
         $sql = "SELECT * FROM cards";
         $resultado = mysqli_query($connect, $sql);
+        
+        if(mysqli_num_rows($resultado) > 0):
+
         while($dados = mysqli_fetch_array($resultado)):
 
 
@@ -51,10 +54,40 @@ include_once 'includes/msg.php';
         <td><?php echo $dados['descriçao']; ?></td>
 
         <td> <a href="editar.php?id=<?php echo $dados['id']; ?>"class="btn-floating green"> <i class="material-icons ">edit</i></a> </td>  
-        <td> <a href=""class="btn-floating red"><i class="material-icons ">delete</i></a> </td>  
+        <td> <a href="#modal<?php echo $dados['id']; ?>"class="btn-floating red waves-effect waves-light btn modal-trigger"><i class="material-icons ">delete</i></a> </td>  
+
+            <!-- Modal Structure -->
+          <div id="modal<?php echo $dados['id']; ?>" class="modal">
+            <div class="modal-content">
+              <h4>Opa!</h4>
+              <p>Tem certeza que deseja excluir esse card do sistema ?</p>
+            </div>
+            <div class="modal-footer">
+              
+
+              <form action="delete.php" method="POST">
+                <input type="hidden" name="id" value="<?php echo $dados['id']; ?>">
+                <button type="submit" name="btn-deletar" class="btn red" >Deletar</button>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+              </form>
+            </div>
+          </div>
 
       </tr>
-        <?php endwhile; ?>
+        <?php 
+        endwhile; 
+      else: ?>
+
+      <tr> 
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <?php
+      endif;
+      ?>
     </tbody>
     </table>
     
