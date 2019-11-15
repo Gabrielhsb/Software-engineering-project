@@ -1,5 +1,10 @@
 <?php
+//conexão
+include_once 'login/db_connect.php';
+//header
 include_once 'includes/header.php';
+
+include_once 'includes/msg.php';
 ?>
 
 <div class="nabar-fixed">
@@ -31,29 +36,25 @@ include_once 'includes/header.php';
         </tr>
       </thead>
     <tbody>
-      <tr>
-        <td> <img src="includes/adds/db.jpg" width=120 height=200></td>
-        <td>Dragão Branco</td>
-        <td>$200</td>
-        <td>6</td>
-        <td>Uma das cartas mais raras!</td>
+      <?php
+        $sql = "SELECT * FROM cards";
+        $resultado = mysqli_query($connect, $sql);
+        while($dados = mysqli_fetch_array($resultado)):
 
-        <td> <a href=""class="btn-floating green"> <i class="material-icons ">edit</i></a> </td>  
+
+      ?>
+      <tr>
+        <td> <img src="<?php echo $dados['imagem']; ?>" width=120 height=200></td>
+        <td><?php echo $dados['nome']; ?></td>
+        <td>$<?php echo $dados['preço']; ?></td>
+        <td><?php echo $dados['raridade']; ?></td>
+        <td><?php echo $dados['descriçao']; ?></td>
+
+        <td> <a href="editar.php?id=<?php echo $dados['id']; ?>"class="btn-floating green"> <i class="material-icons ">edit</i></a> </td>  
         <td> <a href=""class="btn-floating red"><i class="material-icons ">delete</i></a> </td>  
 
       </tr>
-
-      <tr>
-        <td> <img src="includes/adds/mn.jpg" width=120 height=200></td>
-        <td>Mago Negro</td>
-        <td>$40</td>
-        <td>6</td>
-        <td>Brabo</td>
-
-        <td> <a href=""class="btn-floating green"> <i class="material-icons ">edit</i></a> </td>  
-        <td> <a href=""class="btn-floating red"><i class="material-icons ">delete</i></a> </td>  
-
-      </tr>
+        <?php endwhile; ?>
     </tbody>
     </table>
     
