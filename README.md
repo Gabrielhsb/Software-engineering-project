@@ -31,3 +31,4 @@ Git      |V2.23.0
   - <b>Adicionado</b>: Arquivo Hello.php.
   
 - Sempre termine frase com ponto final os commits.
+
