@@ -22,16 +22,16 @@ include_once 'includes/msg.php';
 </nav>
 </div>
 <div class="row">
-  <div class="col s12 m6 push-m3 ">
+  <div class="col s24 m10 push-m1">
   <h3 class="light">Cards</h3>
-    <table class="striped">
+    <table class="striped"  >
       <thead>
-        <tr>
-          <th>Imagem</th>
-          <th>Nome</th>
-          <th>Preço</th>
-          <th>Raridade</th>
-          <th>Descrição</th>
+        <tr >
+          <th  width="20%" >Imagem</th>
+          <th width="20%"> Nome</th>
+          <th width="20%">Preço</th>
+          <th width="20%">Raridade</th>
+          <th width="20%">Descrição</th>
           
         </tr>
       </thead>
@@ -48,12 +48,12 @@ include_once 'includes/msg.php';
       ?>
       <tr>
         <td> <img src="<?php echo $dados['imagem']; ?>" width=120 height=200></td>
-        <td><?php echo $dados['nome']; ?></td>
-        <td>$<?php echo $dados['preço']; ?></td>
+        <td ><?php echo $dados['nome']; ?></td>
+        <td >$<?php echo $dados['preço']; ?></td>
         <td><?php echo $dados['raridade']; ?></td>
         <td><?php echo $dados['descriçao']; ?></td>
 
-        <td> <a href="editar.php?id=<?php echo $dados['id']; ?>"class="btn-floating green"> <i class="material-icons ">edit</i></a> </td>  
+        <td > <a href="editar.php?id=<?php echo $dados['id']; ?>"class="btn-floating green"> <i class="material-icons ">edit</i></a> </td>  
         <td> <a href="#modal<?php echo $dados['id']; ?>"class="btn-floating red waves-effect waves-light btn modal-trigger"><i class="material-icons ">delete</i></a> </td>  
 
             <!-- Modal Structure -->
