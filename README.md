@@ -16,3 +16,18 @@ PHP       | V7.3.8
 XAAMP    | V7.3.9
 Git      |V2.23.0
 
+<h3> Regras para commits</h3>
+
+- Para commits que adicionaram novas funções ao projeto comece com <b>Implementado</b>:
+  - <b>Implementado</b>: Sistema de login.
+  
+- Para commits que removeram algum arquivo ou função com bug comece com <b>Removido</b>:
+  - <b>Removido</b>: Arquivo texte.php removido, pois não tem mais utilidade.
+  
+- Para commits que corrigiriram bugs, erros ou arquivos comece com <b>Corrigido</b>:
+  - <b>Corrigido</b>: Bug no sistema de cadastro.
+  
+- Para commits que adicionaram algum arquivo comece com <b>Adicionado</b>:
+  - <b>Adicionado</b>: Arquivo Hello.php.
+  
+- Sempre termine frase com ponto final os commits.
