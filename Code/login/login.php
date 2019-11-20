@@ -1,10 +1,7 @@
 
-
 <?php
-
 //conexão
 require_once 'db_connect_login.php';
-
 //Sessão
 session_start();
 //verificação

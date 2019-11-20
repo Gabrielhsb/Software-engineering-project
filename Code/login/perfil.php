@@ -1,24 +1,23 @@
 <?php
-require_once 'db_connect_login.php';
+  require_once 'db_connect_login.php';
+  session_start();
+  //verificação se o usuario esta logado
+  if(!isset($_SESSION['logado'])):
+    header('Location: $name');
+  endif;
 
-session_start();
-//verificação
+  //dados
+  $id = $_SESSION['id_usuario'];
+  $sql = "SELECT * FROM clientes WHERE id = '$id'";
+  $resultado = mysqli_query($connect, $sql);
+  $dados = mysqli_fetch_array($resultado);
+  mysqli_close($connect);
 
-if(!isset($_SESSION['logado'])):
-  header('Location: ../index_usuario.php');
-endif;
-//dados
-$id = $_SESSION['id_usuario'];
-$sql = "SELECT * FROM clientes WHERE id = '$id'";
-$resultado = mysqli_query($connect, $sql);
-$dados = mysqli_fetch_array($resultado);
-mysqli_close($connect);
-
-if($dados['email'] === 'adm2'):
-  $name = '../index.php';
-else:
-  $name = '../index_usuario.php';
-endif;
+  if($dados['email'] === 'adm2' or $dados['email'] === 'adm'):
+    $name = '../index.php';
+  else:
+    $name = '../index_usuario.php';
+  endif;
 ?>
 
 

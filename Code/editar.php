@@ -3,7 +3,7 @@
 include_once 'login/db_connect.php';
 //Header
 include_once 'includes/header.php';
-//Select
+//Select o id card a ser editado
 if(isset($_GET['id'])):
   $id = mysqli_escape_string($connect, $_GET['id']);
 
@@ -26,6 +26,7 @@ endif;
   <div class="col s12 m6 push-m3 ">
   <h3 class="light">Editar Card</h3>
     <form action="update.php" method= "POST">
+    <!--Formulario para Edição do card-->
       <input type="hidden" name="id" value="<?php echo $dados['id']; ?>">
       <div class="input-field col s12">
           <input type="text" name="imagem" id="imagem" value="<?php echo $dados['imagem']; ?>">

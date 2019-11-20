@@ -9,6 +9,7 @@ include_once 'includes/msg.php';
 
 <div class="nabar-fixed">
 <nav>
+<!--Barra de navegação-->
 <div class="nav-wrapper  indigo darken-3">
 <a href="index.php" class="brand-logo center">Kaiba Corporation</a>
 <ul id="nav-mobile" class="right hide-on-med-and-down" >
@@ -26,6 +27,7 @@ include_once 'includes/msg.php';
   <div class="col s24 m10 push-m1">
   <h3 class="light">Cards</h3>
     <table class="striped"  >
+    <!--Tabela de cards-->
       <thead>
         <tr >
           <th  width="20%">Imagem</th>
