@@ -13,7 +13,7 @@ include_once 'includes/msg.php';
 <a href="index.php" class="brand-logo center">Kaiba Corporation</a>
 <ul id="nav-mobile" class="right hide-on-med-and-down" >
     <li><a href="login/perfil.php"><i class="material-icons">person</i></a></li>
-    <li><a href="adicionar.php"><i class="material-icons">edit</i></a></li>
+    <li><a href="adicionar.php"><i class="material-icons">add</i></a></li>
     <li><a href="buscar.php"><i class="material-icons">search</i></a></li>
     <li><div class="divider"></div></li>
   </ul>  
@@ -28,7 +28,7 @@ include_once 'includes/msg.php';
     <table class="striped"  >
       <thead>
         <tr >
-          <th  width="20%" >Imagem</th>
+          <th  width="20%">Imagem</th>
           <th width="20%"> Nome</th>
           <th width="20%">Preço</th>
           <th width="20%">Raridade</th>

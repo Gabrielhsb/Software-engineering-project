@@ -3,8 +3,9 @@ require_once 'db_connect_login.php';
 
 session_start();
 //verificação
+
 if(!isset($_SESSION['logado'])):
-  header('Location: index.php');
+  header('Location: ../index_usuario.php');
 endif;
 //dados
 $id = $_SESSION['id_usuario'];
@@ -12,20 +13,19 @@ $sql = "SELECT * FROM clientes WHERE id = '$id'";
 $resultado = mysqli_query($connect, $sql);
 $dados = mysqli_fetch_array($resultado);
 mysqli_close($connect);
+
+if($dados['email'] === 'adm2'):
+  $name = '../index.php';
+else:
+  $name = '../index_usuario.php';
+endif;
 ?>
 
 
 <!DOCTYPE html>
-  <html>
-    <head>
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
+<?php
+include_once 'includes/header.php';
+?>
 
       <body>
 
@@ -53,12 +53,14 @@ mysqli_close($connect);
             </div>
             <div class="card-action">
               <a href="#">Editar perfil</a>
-              <a href="../index.php">Voltar</a>
+              <a href="<?php echo $name; ?>">Voltar</a>
               <a href="logout.php">Sair</a>
             </div>
           </div>
         </div>
       </div>
     </body>
-  </html>
-
+  
+<?php
+include_once 'includes/footer.php';
+?>

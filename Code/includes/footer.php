@@ -6,10 +6,10 @@
         var elems = document.querySelectorAll('.sidenav');
         var instances = M.Sidenav.init(elems);
            });     
-
     </script>
     <script> M.AutoInit(); </script>
     </body>
+    <h2>OLA</h2>
   </html>
 
 
