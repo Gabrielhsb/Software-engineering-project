@@ -34,3 +34,7 @@ include_once 'includes/msg.php';
       </div>
   </div>
 </div>
+
+<?php
+include_once 'includes/footer.php';
+?>
