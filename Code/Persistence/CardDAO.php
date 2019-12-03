@@ -5,7 +5,8 @@
 		function cadastrar($cards, $link) {
 			$query = "INSERT INTO cards (imagem, nome, preço, raridade, descriçao) values ('".($cards->getImagem())."','".($cards->getNome())."','".($cards->getPreço())."', '".($cards->getRaridade())."', '".($cards->getDescriçao())."')";
 			if(!mysqli_query($link, $query)) {die("ERRO! NÃO SALVOU OS DADOS.<br /><br /><a href=\"../view/excluirCards.php\">VOLTAR</a>");}
-			echo "DADOS SALVOS.<br /><br /><a href=\"../view/cadastrarcards.php\">VOLTAR</a>";
+			$_SESSION['mensagem'] = "DADOS SALVOS";
+			header('Location: ../Controller/C_listar.php?');
 		} 
 		
 		function excluir($id, $link) {
@@ -28,6 +29,21 @@
 			return $result;
 		}
 		
+		function consultarId($id, $link) {
+			$i = 0;
+			foreach  ($id as $ids){
+				
+				$variavel = $ids['id_cards'];
+			$query = "SELECT * FROM cards WHERE id ='$variavel'";
+			$result = mysqli_query($link, $query);
+			$vet[$i] = $result;
+			$i = $i+1;
+			}
+			if($vet) {
+				return $vet;
+			}
+			die("ERRO. cards NÃO ENCONTRADO.<br /><br /><a href=\"../view/excluirCards.php\">VOLTAR</a>");
+		}
 		function consultarAll($link) {
 			$query = "SELECT * FROM cards";
 			$result = mysqli_query($link, $query);

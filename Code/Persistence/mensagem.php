@@ -9,5 +9,5 @@
   </script>
 <?php
 endif;
-
+$_SESSION['mensagem'] = NULL;
 ?>

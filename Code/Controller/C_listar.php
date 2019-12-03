@@ -1,12 +1,9 @@
 <?php
-session_start();
-if($_SESSION['email'] != 'ghsb11@gmail.com'){
-  header('location: C_listar_cliente.php?');
-}
 	include_once("../persistence/Connection.php");
 	include_once("../persistence/CardDAO.php");
 	
-	$conexao =  mysqli_connect("localhost","root","","corporação_kaiba");
+	$conexao = new Connection("localhost","root","","corporação_kaiba");
+	$conexao->conectar();
 	$cardsdao = new CardsDao();
 	$resultado = $cardsdao->consultarAll($conexao->getLink());
 ?>

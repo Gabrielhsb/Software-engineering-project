@@ -2,10 +2,6 @@
 <?php
   require_once '../Persistence/connection.php';
   session_start();
-  if($_SESSION['email'] === 'ghsb11@gmail.com'){
-    header('location: ../controller/C_perfil_gerente.php?');
-    echo $_SESSION['email'];
-  }
   //verificação se o usuario esta logado
   //dados
   $connect = mysqli_connect("localhost","root","","corporação_kaiba");
@@ -56,6 +52,7 @@
       <div class="card-action">
         <a href="../Controller/C_listar_favoritos.php">Favoritos</a>
         <a href="../View/inicial.php">Buscar</a>
+        <a href="../Controller/C_listar.php">Gerenciar cards</a>
         <a href="../Controller/C_logout.php">Sair</a>
       </div>
     </div>

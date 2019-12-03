@@ -1,14 +1,16 @@
 <?php
-
 	include_once("../persistence/Connection.php");
   include_once("../persistence/CardDAO.php");
   include_once("../persistence/mensagem.php");
- 
-  $conexao = new Connection("localhost","root","","corporação_kaiba");
-
+	$conexao = new Connection("localhost","root","","corporação_kaiba");
 	$conexao->conectar();
-	$cardsdao = new CardsDao();
-	$resultado = $cardsdao->consultarAll($conexao->getLink());
+  $cardsdao = new CardsDao();
+  $id_usuario = $_SESSION['id_usuario'];
+  $query = "SELECT id_cards FROM favoritos WHERE Id_clientes='$id_usuario'";
+  $res = mysqli_query($conexao->getlink(), $query);
+  $resultado = $cardsdao->consultarId($res,$conexao->getLink());
+	
+  
 ?>
 <!--Cabeçalho dos arquivos html-->
 <!DOCTYPE html>
@@ -53,8 +55,11 @@
       </thead>
     <tbody>
       <?php
-        if(mysqli_num_rows($resultado) > 0):
-        while($dados = mysqli_fetch_array($resultado)):
+      
+        $i = 0;
+        while($i < sizeof($resultado)):
+          $dados = mysqli_fetch_array($resultado[$i]);
+          $i = $i+1;
       ?>
       <tr>
         <td><img src="<?php echo $dados['imagem']; ?>" width=120 height=200></td>
@@ -62,7 +67,7 @@
         <td>$<?php echo $dados['preço']; ?></td>
         <td><?php echo $dados['raridade']; ?></td>
         <td><?php echo $dados['descriçao']; ?></td>
-        <td ><a href="#modal<?php echo $dados['id'] ; ?>"class="btn-floating red waves-effect waves-light btn modal-trigger "> <i class="material-icons ">favorite</i></a> </td>  
+        <td ><a href="#modal<?php echo $dados['id'] ; ?>"class="btn-floating red waves-effect waves-light btn modal-trigger "> <i class="material-icons ">remove</i></a> </td>  
 
   
             <!-- Modal Structure -->
@@ -74,9 +79,9 @@
             <div class="modal-footer">
               
 
-              <form action="C_favorito_insert.php" method="POST">
+              <form action="C_favorito_delete.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $dados['id']; ?>">
-                <button type="submit" name="btn-deletar" class="btn green" >Adicionar</button>
+                <button type="submit" name="btn-deletar" class="btn red" >Remover</button>
                 <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
               </form>
             </div>
@@ -84,18 +89,9 @@
       </tr>
         <?php 
         endwhile; 
-      else: ?>
+       ?>
 
-      <tr> 
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-      </tr>
-      <?php
-      endif;
-      ?>
+      
     </tbody>
     </table>
     

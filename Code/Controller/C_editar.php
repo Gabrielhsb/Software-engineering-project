@@ -63,7 +63,7 @@
         <label for="nome">Descrição</label>
       </div>
         <button type="Submit" name="btn-editar" class="btn">Atualizar</button>
-        <a href="index.php" class="btn">Listar Cards</a>
+        <a href="C_listar.php" class="btn">Listar Cards</a>
     </form>
     </div>
 </div>

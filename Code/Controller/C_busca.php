@@ -1,12 +1,16 @@
 <?php
 	include_once("../persistence/Connection.php");
 	include_once("../persistence/CardDAO.php");
-	
+	include_once("../persistence/mensagem.php");
 	$conexao = new Connection("localhost","root","","corporação_kaiba");
 	$conexao->conectar();
 	$cardsdao = new CardsDao();
 	$resultado = $cardsdao->consultar($_POST["nome"], $conexao->getLink());
   $linha = mysqli_fetch_row($resultado);
+  if(empty($linha)){ 
+    $_SESSION['mensagem'] = "Card não encontrado!";
+    header('Location: ../View/inicial.php?');
+  }
 
 ?>
 
@@ -28,9 +32,8 @@
 <div class="nav-wrapper  indigo darken-3">
 <a href="../View/inicial.html" class="brand-logo center">Kaiba Corporation</a>
 <ul id="nav-mobile" class="right hide-on-med-and-down" >
-    <li><a href="../View/Perfil.html"><i class="material-icons">person</i></a></li>
-    <li><a href="../View/CadastrarCards.html"><i class="material-icons">add</i></a></li>
-    <li><a href="../View/inicial.html"><i class="material-icons">search</i></a></li>
+    <li><a href="../View/Perfil.php"><i class="material-icons">person</i></a></li>
+    <li><a href="../View/inicial.php"><i class="material-icons">search</i></a></li>
     <li><div class="divider"></div></li>
   </ul>  
   </li>
@@ -55,14 +58,30 @@
       </thead>
     <tbody>
       <tr>
+
         <td> <img src="<?php echo $linha[1]; ?>" width=120 height=200></td>
         <td ><?php echo $linha[2]; ?></td>
         <td >$<?php echo $linha[3]; ?></td>
         <td><?php echo $linha[4]; ?></td>
         <td><?php echo $linha[5]; ?></td>
 
-        <td > <a href="editar.php?id=<?php echo $dados['id']; ?>"class="btn-floating green"> <i class="material-icons ">edit</i></a> </td>  
-        <td> <a href="#modal<?php echo $dados['id']; ?>"class="btn-floating red waves-effect waves-light btn modal-trigger"><i class="material-icons ">delete</i></a> </td>  
+        <td ><a href="#modal<?php echo $linha[0] ; ?>"class="btn-floating red waves-effect waves-light btn modal-trigger "> <i class="material-icons ">favorite</i></a> </td>        
+        <!-- Modal Structure -->
+        <div id="modal<?php echo $linha[0] ; ?>" class="modal">
+            <div class="modal-content">
+              <h4>Opa!</h4>
+              <p>Quer adicionar esse card aos favoritos?</p>
+            </div>
+            <div class="modal-footer">
+              
+
+              <form action="C_favorito_insert.php" method="POST">
+                <input type="hidden" name="id" value="<?php echo $linha[0] ; ?>">
+                <button type="submit" name="btn-deletar" class="btn green" >Adicionar</button>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+              </form>
+            </div>
+          </div>
         
   <!--JavaScript at end of body for optimized loading-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
