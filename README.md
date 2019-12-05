@@ -1,6 +1,9 @@
 # Corporação Kaiba ![dc7jey9-e473fff8-4f4d-4476-b8f0-57b5a8e6fb6a](https://user-images.githubusercontent.com/35871639/66340707-26c03e80-e91c-11e9-8289-c884c755a095.png)
 
-Sistema de gerenciamento de vendas de uma loja de cards (monstros de duelos).
+Sistema de gerenciamento de preço de cards (monstros de duelos).
+
+-Gerente cadastrar cards e seus preços atuais no mercado.</br>
+-Cliente ao se cadastrar pode vizualizar os cards e os que ele deseja acompanhar o preço pode ser adicionado aos favoritos.
 
 <h3>Grupo:</h3>
 
