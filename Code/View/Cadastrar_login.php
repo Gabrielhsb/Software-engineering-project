@@ -26,19 +26,19 @@ require_once '../Persistence/mensagem.php';
     <hr>
     <form action="../Controller/C_cadastrar.php" method="POST">
       <div class="input-field col s12">
-          <input type="text" name="nome"><br>
+          <input type="text" name="nome" required><br>
           <label for="nome">Nome</label>
         </div>
       <div class="input-field col s12">
-          <input type="text" name="login"><br>
+          <input type="text" name="login" required><br>
           <label for="nome">Email</label>
         </div>
       <div class="input-field col s12">
-          <input type="password" name="senha"><br>
+          <input type="password" name="senha" required><br>
           <label for="nome">Senha</label>
         </div>
         <div class="input-field col s12">
-          <input type="password" name="repetirSenha"><br>
+          <input type="password" name="repetirSenha" required><br>
           <label for="nome">Repetir Senha</label>
         </div>
           <button type="Submit" name="btn-entrar" class="btn"> <i class="material-icons left">done</i>Cadastrar</button>

@@ -24,11 +24,11 @@ require_once 'Persistence/mensagem.php';
     <hr>
     <form action="Controller/C_login.php" method="POST">
     <div class="input-field col s12">
-        <input type="text" name="login"><br>
+        <input type="text" name="login" required ><br>
         <label for="nome">Email</label>
       </div>
     <div class="input-field col s12">
-        <input type="password" name="senha"><br>
+        <input type="password" name="senha" required ><br>
         <label for="nome">Senha</label>
       </div>
         <button type="Submit" name="btn-entrar" class="btn"> <i class="material-icons left">done</i>Entrar</button>

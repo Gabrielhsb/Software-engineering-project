@@ -7,9 +7,6 @@
     $conectar = mysqli_connect("localhost","root","","corporação_kaiba");
     $login = mysqli_escape_string($conectar, $_POST['login']);
     $senha = mysqli_escape_string($conectar, $_POST['senha']);
-    if(empty($login) or empty($senha)):
-      $_SESSION["mensagem"] = "<li> O campo Email/senha precisa ser preenchidos </li>";
-    else:
         $sql = "SELECT email FROM clientes WHERE email = '$login'";
         $resultado = mysqli_query($conectar, $sql);
         if(mysqli_num_rows($resultado) > 0):
@@ -31,7 +28,6 @@
         else:
           $_SESSION["mensagem"] = "<li> Usuário inexistente </li>";
         endif;
-    endif;
   
   if(!empty($_SESSION["mensagem"])):
     header('Location: ../index.php?');

@@ -16,7 +16,7 @@
 				die("ERRO. cards NÃO EXCLUIDO.<br /><br /><a href=\"../Controller/C_listar.php\">VOLTAR</a>");
 	
 			}
-			echo "cards EXCLUIDO.<br /><br /><a href=\"../view/excluirCards.php\">VOLTAR</a>";
+			$_SESSION['mensagem'] = "Card Excluido";
 			header('Location: ../Controller/C_listar.php?');
 		}
 		
