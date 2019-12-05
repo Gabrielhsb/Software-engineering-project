@@ -1,12 +1,15 @@
 <?php
+//incluido arquivos necessarios
 	include_once("../persistence/Connection.php");
 	include_once("../persistence/CardDAO.php");
-	include_once("../persistence/mensagem.php");
+  include_once("../persistence/mensagem.php");
+  //iniciando conexao e criando classe cards
 	$conexao = new Connection("localhost","root","","corporação_kaiba");
 	$conexao->conectar();
 	$cardsdao = new CardsDao();
 	$resultado = $cardsdao->consultar($_POST["nome"], $conexao->getLink());
   $linha = mysqli_fetch_row($resultado);
+  //se resultado tiver vasio card nào foi encontrado retorna mensagem de erro
   if(empty($linha)){ 
     $_SESSION['mensagem'] = "Card não encontrado!";
     header('Location: ../View/inicial.php?');

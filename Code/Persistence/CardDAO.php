@@ -1,4 +1,5 @@
 <?php
+//Definição da classe cardDAO e suas funçoes
   include_once("../Model/Card.php");
 
   class cardsDAO {
@@ -42,7 +43,8 @@
 			if($vet) {
 				return $vet;
 			}
-			die("ERRO. cards NÃO ENCONTRADO.<br /><br /><a href=\"../view/excluirCards.php\">VOLTAR</a>");
+			$_SESSION['mensagem'] = "Não tem favoritos!";
+			header('Location: ../View/Perfil.php?');
 		}
 		function consultarAll($link) {
 			$query = "SELECT * FROM cards";

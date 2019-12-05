@@ -1,4 +1,5 @@
 <?php
+//Definição da classe card
   class Cards{
     var $id;
     var $imagem;
@@ -17,9 +18,7 @@
 	}
     
 
-  function imprimir() {
-    echo "Nome: ".($this->nome)."<br />Preço: ".($this->preço)."<br />Raridade: ".($this->raridade)."<br />Descriçao: ".($this->descriçao)."<br />";
-  }
+
 
   function getId() {return $this->id;}
   function getNome() {return $this->nome;}

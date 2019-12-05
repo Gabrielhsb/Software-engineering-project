@@ -1,4 +1,5 @@
 <?php
+//incluido arquivos necessarios
 	include_once("../Model/Card.php");
 	include_once("../Persistence/Connection.php");
 	include_once("../Persistence/CardDAO.php");

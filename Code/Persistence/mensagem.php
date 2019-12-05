@@ -1,4 +1,5 @@
 <?php
+//Arquivo utilizado para mensagens do sistema
 //Sessão
   session_start();
   if(isset($_SESSION['mensagem'])): ?>

@@ -1,5 +1,4 @@
 <?php
-//conexão
 require_once 'Persistence/Connection.php';
 require_once 'Persistence/mensagem.php';
 ?>

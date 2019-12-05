@@ -1,4 +1,5 @@
 <?php
+//incluido arquivos necessarios e iniciando instacias
 	include_once("../persistence/Connection.php");
   include_once("../persistence/CardDAO.php");
   include_once("../persistence/mensagem.php");

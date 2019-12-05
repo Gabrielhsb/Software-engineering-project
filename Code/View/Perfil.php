@@ -1,7 +1,8 @@
 
 <?php
   require_once '../Persistence/connection.php';
-  session_start();
+  require_once '../Persistence/mensagem.php';
+  
   if($_SESSION['email'] === 'ghsb11@gmail.com'){
     header('location: ../controller/C_perfil_gerente.php?');
     echo $_SESSION['email'];

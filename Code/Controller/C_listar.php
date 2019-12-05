@@ -1,4 +1,5 @@
 <?php
+//incluido arquivos necessarios
 	include_once("../persistence/Connection.php");
 	include_once("../persistence/CardDAO.php");
 	
@@ -23,7 +24,7 @@
 <nav>
 <!--Barra de navegação-->
 <div class="nav-wrapper  indigo darken-3">
-<a href="../View/inicial.html" class="brand-logo center">Kaiba Corporation</a>
+<a href="#" class="brand-logo center">Kaiba Corporation</a>
 <ul id="nav-mobile" class="right hide-on-med-and-down" >
     <li><a href="../View/Perfil.php"><i class="material-icons">person</i></a></li>
     <li><a href="../View/CadastrarCards.html"><i class="material-icons">add</i></a></li>

@@ -1,5 +1,7 @@
 <?php
+//incluido arquivos necessarios
     require_once '../Persistence/Connection.php';
+    //iniciando sessão
     session_start();
    
     $conectar = mysqli_connect("localhost","root","","corporação_kaiba");

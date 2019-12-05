@@ -1,6 +1,7 @@
 <?php 
 //Conexão
 require_once '../Persistence/Connection.php';
+require_once '../Persistence/ClienteDAO.php';
 //Sessão
   session_start();
   $erros = array();
@@ -26,15 +27,9 @@ require_once '../Persistence/Connection.php';
           header('Location: ../View/Cadastrar_login.php?');
         else:
           $senha = md5($senha);
-          $sql = "INSERT INTO clientes (nome, email, senha) VALUES ('$nome', '$login', '$senha')";
-          if(mysqli_query($connect, $sql)):
-            $_SESSION['mensagem'] = "Cadastrado com Sucesso!";
-            header('Location: ../index.php?');
-          else:
-            $_SESSION['mensagem'] = "Erro ao cadastrar!";
-            header('Location: ../View/Cadastrar_login.php?');
+          $cliente = new ClienteDAO();
+          $cliente->cadastrar($nome, $login ,$senha, $connect);
           endif;
         endif;
       endif;
-    endif;
 ?>
